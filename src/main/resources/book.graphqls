@@ -1,0 +1,22 @@
+type Book {
+    id: ID!,
+    categoryName: String!,
+    bookName: String!,
+    authorName: String!,
+    publishDate: String
+}
+
+input BookDto {
+    categoryName: String!,
+    bookName: String!,
+    authorName: String!
+}
+
+type Query {
+    getBooks(category: String):[Book]
+    getById(id: ID):Book
+}
+
+type Mutation {
+    createBook(book: BookDto):Book
+}
